@@ -57,7 +57,6 @@ namespace Properties.Model.Services
         /// <returns>Created Property</returns>
         public async Task<Property> InsertAsync(PropertyCreateDto dto)
         {
-
             var exists = await propertyModelService.IsPropertyDuplicated(dto.CodeInternal, null);
             if (exists)
                 throw new BusinessException("Property Internal Code duplicated");
@@ -76,12 +75,6 @@ namespace Properties.Model.Services
         /// <returns></returns>
         public async Task UpdateAsync(int propertyId, PropertyUpdateDto dto)
         {
-
-            var ctx = new ValidationContext(dto);
-            // A list to hold the validation result.
-            var results = new List<ValidationResult>();
-            Validator.ValidateObject(dto, ctx);
-
             var entity = await propertyModelService.GetAsync(propertyId);
             if (entity == null)
                 throw new BusinessException("Property to update not found");
@@ -94,5 +87,18 @@ namespace Properties.Model.Services
             await propertyModelService.UpdateAsync(entity);
         }
 
+        /// <summary>
+        /// Delete Property by ID
+        /// </summary>
+        /// <param name="propertyId">Property's Internal identifier</param>
+        /// <returns></returns>
+        public async Task DeleteAsync(int propertyId)
+        {
+            var entity = await propertyModelService.GetAsync(propertyId);
+            if (entity == null)
+                throw new BusinessException("Property to update not found");
+
+            await propertyModelService.DeleteAsync(propertyId);
+        }
     }
 }

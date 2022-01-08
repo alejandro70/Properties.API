@@ -6,3 +6,1476 @@
 2022-01-08 17:45:24.018 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 158.4437ms
 2022-01-08 17:45:24.110 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
 2022-01-08 17:45:24.192 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.4356ms
+2022-01-08 17:57:33.766 -05:00 [INF] Starting Web Host
+2022-01-08 17:57:35.522 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 17:57:35.525 -05:00 [INF] Hosting environment: Development
+2022-01-08 17:57:35.526 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 17:57:35.539 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 17:57:35.630 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 93.5281ms
+2022-01-08 17:57:35.726 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 17:57:35.794 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 67.8224ms
+2022-01-08 17:57:40.873 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 17:57:40.895 -05:00 [INF] CORS policy execution successful.
+2022-01-08 17:57:40.898 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 17:57:40.928 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 17:57:41.262 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 17:57:41.702 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 17:57:42.278 -05:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 17:57:42.310 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 17:57:42.310 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 17:57:42.408 -05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 17:57:42.459 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1194.4781ms.
+2022-01-08 17:57:42.463 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 17:57:42.473 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 1541.5374ms
+2022-01-08 17:57:42.474 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 17:57:42.477 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 1603.4642ms
+2022-01-08 18:02:46.085 -05:00 [INF] Starting Web Host
+2022-01-08 18:02:47.134 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 18:02:47.139 -05:00 [INF] Hosting environment: Development
+2022-01-08 18:02:47.140 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 18:02:47.151 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 18:02:47.238 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 88.0757ms
+2022-01-08 18:02:47.363 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 18:02:47.438 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 74.6628ms
+2022-01-08 18:02:56.687 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:02:56.709 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:02:56.712 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:02:56.740 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:02:57.012 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:02:57.524 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:02:58.003 -05:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:02:58.050 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:02:58.051 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:02:58.177 -05:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:02:58.248 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1232.5589ms.
+2022-01-08 18:02:58.256 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:02:58.271 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 1527.5406ms
+2022-01-08 18:02:58.271 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:02:58.276 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 1588.9433ms
+2022-01-08 18:02:59.636 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties/3 - -
+2022-01-08 18:02:59.637 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:02:59.638 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties/3 - - - 204 - - 1.6594ms
+2022-01-08 18:02:59.640 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/3 - -
+2022-01-08 18:02:59.641 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:02:59.641 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:02:59.643 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:02:59.659 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:02:59.678 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:02:59.704 -05:00 [INF] Executed DbCommand (12ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:02:59.730 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 71.2222ms.
+2022-01-08 18:02:59.732 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:02:59.732 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 88.8695ms
+2022-01-08 18:02:59.732 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:02:59.733 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/3 - - - 204 - - 93.0856ms
+2022-01-08 18:03:03.480 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/3 - -
+2022-01-08 18:03:03.480 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:03:03.480 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:03:03.480 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:03:03.494 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:03:03.500 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:03:03.504 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:03:03.505 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 11.2159ms.
+2022-01-08 18:03:03.505 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:03:03.505 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 25.1193ms
+2022-01-08 18:03:03.505 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:03:03.505 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/3 - - - 204 - - 25.7970ms
+2022-01-08 18:03:04.111 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/3 - -
+2022-01-08 18:03:04.111 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:03:04.111 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:03:04.111 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:03:04.121 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:03:04.121 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:03:04.123 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:03:04.124 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 2.6488ms.
+2022-01-08 18:03:04.124 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:03:04.124 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 13.0401ms
+2022-01-08 18:03:04.124 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:03:04.124 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/3 - - - 204 - - 13.4989ms
+2022-01-08 18:03:07.844 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:03:07.844 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:03:07.844 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:03:07.844 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:03:07.859 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:03:07.860 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:03:07.862 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:03:07.865 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:03:07.866 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.6471ms.
+2022-01-08 18:03:07.866 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:03:07.866 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 22.1746ms
+2022-01-08 18:03:07.867 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:03:07.867 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 22.9562ms
+2022-01-08 18:03:39.846 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:03:39.846 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:03:39.846 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:03:39.846 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:03:39.858 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:03:39.859 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:03:39.867 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:03:39.868 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:03:39.875 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 16.5618ms.
+2022-01-08 18:03:39.875 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:03:39.876 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 29.3054ms
+2022-01-08 18:03:39.876 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:03:39.883 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 36.8331ms
+2022-01-08 18:04:03.214 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:04:03.214 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:03.215 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:03.224 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:03.239 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:03.247 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:03.249 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:04:03.253 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:04:03.288 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 49.8061ms.
+2022-01-08 18:04:03.289 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:04:03.289 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 64.5565ms
+2022-01-08 18:04:03.289 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:03.290 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 75.2734ms
+2022-01-08 18:04:04.990 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties/3 - -
+2022-01-08 18:04:04.990 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:04.991 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties/3 - - - 204 - - 0.5932ms
+2022-01-08 18:04:04.992 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/3 - -
+2022-01-08 18:04:04.999 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:04.999 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:04:05.000 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:05.013 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:05.014 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:05.018 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:04:05.019 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 5.2769ms.
+2022-01-08 18:04:05.019 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:04:05.019 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 19.2497ms
+2022-01-08 18:04:05.019 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:04:05.019 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/3 - - - 204 - - 26.9068ms
+2022-01-08 18:04:09.461 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/3 - -
+2022-01-08 18:04:09.461 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:09.462 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:04:09.462 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:09.475 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:09.475 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:09.477 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:04:09.478 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 3.5089ms.
+2022-01-08 18:04:09.478 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:04:09.478 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 16.514ms
+2022-01-08 18:04:09.478 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:04:09.478 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/3 - - - 204 - - 17.2614ms
+2022-01-08 18:04:13.953 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:04:13.966 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:13.966 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:13.966 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:13.996 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:13.996 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:14.000 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:04:14.012 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:04:14.018 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 22.3105ms.
+2022-01-08 18:04:14.019 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:04:14.019 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 52.5151ms
+2022-01-08 18:04:14.019 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:14.019 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 69.1854ms
+2022-01-08 18:04:31.971 -05:00 [INF] Starting Web Host
+2022-01-08 18:04:33.008 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 18:04:33.011 -05:00 [INF] Hosting environment: Development
+2022-01-08 18:04:33.012 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 18:04:33.022 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 18:04:33.102 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 81.5794ms
+2022-01-08 18:04:33.203 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 18:04:33.285 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.8998ms
+2022-01-08 18:04:36.880 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:04:36.908 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:36.911 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:36.950 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:37.223 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:37.637 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:38.052 -05:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:04:38.084 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:04:38.085 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:04:38.184 -05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:04:38.309 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1074.0444ms.
+2022-01-08 18:04:38.324 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:04:38.352 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 1397.1312ms
+2022-01-08 18:04:38.353 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:38.359 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 1479.1016ms
+2022-01-08 18:04:43.913 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties/3 - -
+2022-01-08 18:04:43.914 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:43.915 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties/3 - - - 204 - - 1.3641ms
+2022-01-08 18:04:43.916 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/3 - -
+2022-01-08 18:04:43.917 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:43.917 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:04:43.920 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:43.935 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:43.961 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:43.981 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:04:44.089 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [PropertyImage]
+WHERE [PropertyImageId] = @p0;
+SELECT @@ROWCOUNT;
+2022-01-08 18:04:44.103 -05:00 [INF] Executed DbCommand (8ms) [Parameters=[@p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Property]
+WHERE [PropertyId] = @p1;
+SELECT @@ROWCOUNT;
+2022-01-08 18:04:44.119 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 183.6836ms.
+2022-01-08 18:04:44.123 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:04:44.123 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 203.3422ms
+2022-01-08 18:04:44.123 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:04:44.124 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/3 - - - 204 - - 207.4165ms
+2022-01-08 18:04:46.195 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:04:46.196 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:04:46.196 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:46.196 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:04:46.217 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:04:46.224 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:04:46.228 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:04:46.229 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:04:46.230 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 12.069ms.
+2022-01-08 18:04:46.230 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:04:46.230 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 33.9619ms
+2022-01-08 18:04:46.230 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:04:46.230 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 34.9654ms
+2022-01-08 18:07:56.162 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:07:56.163 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:07:56.164 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:07:56.164 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:07:56.210 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:07:56.211 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:07:56.214 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:07:56.218 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:07:56.219 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 8.2334ms.
+2022-01-08 18:07:56.219 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:07:56.219 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 55.2014ms
+2022-01-08 18:07:56.219 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:07:56.219 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 57.1522ms
+2022-01-08 18:08:01.583 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:08:01.583 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:08:01.583 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:08:01.583 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:08:01.602 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:08:01.603 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:08:01.605 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:08:01.609 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:08:01.610 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.3026ms.
+2022-01-08 18:08:01.610 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:08:01.610 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 27.0061ms
+2022-01-08 18:08:01.610 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:08:01.612 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 35.1622ms
+2022-01-08 18:08:26.076 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:08:26.076 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:08:26.083 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 7.7586ms
+2022-01-08 18:08:26.095 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:08:26.095 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:08:26.095 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:08:26.098 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:08:26.136 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:08:26.138 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:08:26.156 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:08:26.193 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 150), @p1='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Owner] ([Address], [Name])
+VALUES (@p0, @p1);
+SELECT [OwnerId]
+FROM [Owner]
+WHERE @@ROWCOUNT = 1 AND [OwnerId] = scope_identity();
+2022-01-08 18:08:26.215 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (Size = 150), @p3='?' (Size = 50), @p4='?' (Size = 150), @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Property] ([Address], [CodeInternal], [Name], [OwnerId], [Price], [Year])
+VALUES (@p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [PropertyId]
+FROM [Property]
+WHERE @@ROWCOUNT = 1 AND [PropertyId] = scope_identity();
+2022-01-08 18:08:26.218 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PropertyImage] ([Enabled], [File], [PropertyId])
+VALUES (@p8, @p9, @p10);
+SELECT [PropertyImageId]
+FROM [PropertyImage]
+WHERE @@ROWCOUNT = 1 AND [PropertyImageId] = scope_identity();
+2022-01-08 18:08:26.232 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Post (Properties.API), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 96.1735ms.
+2022-01-08 18:08:26.232 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'Properties.Model.Entities.Property'.
+2022-01-08 18:08:26.299 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 201.3413ms
+2022-01-08 18:08:26.299 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:08:26.300 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_SerializerCycleDetected(Int32 maxDepth)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCoreAsObject(Utf8JsonWriter writer, Object value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore[TValue](Stream utf8Json, TValue value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:08:26.348 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 500 - application/json;+charset=utf-8 253.4554ms
+2022-01-08 18:08:37.824 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:08:37.824 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:08:37.824 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 0.4852ms
+2022-01-08 18:08:37.826 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:08:37.826 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:08:37.826 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:08:37.826 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:08:37.842 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:08:37.843 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:08:37.847 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:08:37.989 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 162.5858ms
+2022-01-08 18:08:37.989 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:08:37.989 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Properties.Model.Models.BusinessException: Property Internal Code duplicated
+   at Properties.Model.Services.PropertyBusinessService.InsertAsync(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.Business\Services\PropertyBusinessService.cs:line 62
+   at Properties.API.Controllers.PropertiesController.Post(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.API\Controllers\PropertiesController.cs:line 56
+   at lambda_method198(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:08:38.026 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 500 - application/json;+charset=utf-8 199.7267ms
+2022-01-08 18:12:40.038 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:12:40.045 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:12:40.045 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:12:40.045 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:12:40.057 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:12:40.059 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:12:40.071 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:12:40.076 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:12:40.076 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 19.8229ms.
+2022-01-08 18:12:40.077 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:12:40.077 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 31.8371ms
+2022-01-08 18:12:40.077 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:12:40.077 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 39.4076ms
+2022-01-08 18:12:41.502 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:12:41.502 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:12:41.502 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:12:41.502 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:12:41.519 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:12:41.519 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:12:41.521 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:12:41.531 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:12:41.532 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 12.9436ms.
+2022-01-08 18:12:41.532 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:12:41.532 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 29.8939ms
+2022-01-08 18:12:41.532 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:12:41.532 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 30.6017ms
+2022-01-08 18:13:12.948 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:13:12.950 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:12.950 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 1.7860ms
+2022-01-08 18:13:12.959 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:13:12.959 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:12.959 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:12.960 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:13:12.975 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:13:12.976 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:13:12.982 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:13:13.051 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 91.5285ms
+2022-01-08 18:13:13.051 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:13.052 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Properties.Model.Models.BusinessException: Property Internal Code duplicated
+   at Properties.Model.Services.PropertyBusinessService.InsertAsync(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.Business\Services\PropertyBusinessService.cs:line 62
+   at Properties.API.Controllers.PropertiesController.Post(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.API\Controllers\PropertiesController.cs:line 56
+   at lambda_method198(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:13:13.052 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 500 - application/json;+charset=utf-8 93.3633ms
+2022-01-08 18:13:17.741 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:13:17.749 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:17.749 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:17.749 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:13:17.766 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:13:17.766 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:13:17.777 -05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:13:17.875 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 125.5436ms
+2022-01-08 18:13:17.875 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:17.876 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Properties.Model.Models.BusinessException: Property Internal Code duplicated
+   at Properties.Model.Services.PropertyBusinessService.InsertAsync(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.Business\Services\PropertyBusinessService.cs:line 62
+   at Properties.API.Controllers.PropertiesController.Post(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.API\Controllers\PropertiesController.cs:line 56
+   at lambda_method198(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:13:17.879 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 500 - application/json;+charset=utf-8 138.0129ms
+2022-01-08 18:13:18.485 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:13:18.485 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:18.486 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 0.2871ms
+2022-01-08 18:13:18.487 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:13:18.487 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:18.487 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:18.487 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:13:18.501 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:13:18.501 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:13:18.503 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:13:18.618 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 129.9952ms
+2022-01-08 18:13:18.618 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:18.618 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Properties.Model.Models.BusinessException: Property Internal Code duplicated
+   at Properties.Model.Services.PropertyBusinessService.InsertAsync(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.Business\Services\PropertyBusinessService.cs:line 62
+   at Properties.API.Controllers.PropertiesController.Post(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.API\Controllers\PropertiesController.cs:line 56
+   at lambda_method198(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:13:18.620 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 500 - application/json;+charset=utf-8 133.1816ms
+2022-01-08 18:13:20.614 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:13:20.614 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:20.614 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:13:20.615 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:13:20.631 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:13:20.631 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:13:20.633 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:13:20.644 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:13:20.644 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 13.1898ms.
+2022-01-08 18:13:20.644 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:13:20.644 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 29.8706ms
+2022-01-08 18:13:20.645 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:13:20.645 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 30.3483ms
+2022-01-08 18:13:21.964 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:13:21.964 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:21.964 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:13:21.964 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:13:21.978 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:13:21.978 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:13:21.980 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:13:21.988 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:13:21.989 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 10.3617ms.
+2022-01-08 18:13:21.989 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:13:21.989 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 24.9451ms
+2022-01-08 18:13:21.989 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:13:21.989 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 25.8340ms
+2022-01-08 18:13:44.107 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:13:44.107 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:44.108 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 1.2155ms
+2022-01-08 18:13:44.116 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:13:44.116 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:13:44.116 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:44.116 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:13:44.129 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:13:44.129 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:13:44.137 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:13:44.148 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 150), @p1='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Owner] ([Address], [Name])
+VALUES (@p0, @p1);
+SELECT [OwnerId]
+FROM [Owner]
+WHERE @@ROWCOUNT = 1 AND [OwnerId] = scope_identity();
+2022-01-08 18:13:44.151 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (Size = 150), @p3='?' (Size = 50), @p4='?' (Size = 150), @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Property] ([Address], [CodeInternal], [Name], [OwnerId], [Price], [Year])
+VALUES (@p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [PropertyId]
+FROM [Property]
+WHERE @@ROWCOUNT = 1 AND [PropertyId] = scope_identity();
+2022-01-08 18:13:44.153 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PropertyImage] ([Enabled], [File], [PropertyId])
+VALUES (@p8, @p9, @p10);
+SELECT [PropertyImageId]
+FROM [PropertyImage]
+WHERE @@ROWCOUNT = 1 AND [PropertyImageId] = scope_identity();
+2022-01-08 18:13:44.166 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Post (Properties.API), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 36.5848ms.
+2022-01-08 18:13:44.166 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'Properties.Model.Entities.Property'.
+2022-01-08 18:13:44.168 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 51.3732ms
+2022-01-08 18:13:44.168 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:13:44.168 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_SerializerCycleDetected(Int32 maxDepth)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableOfTConverter`2.OnWriteResume(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Converters.IEnumerableDefaultConverter`2.OnTryWrite(Utf8JsonWriter writer, TCollection value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCoreAsObject(Utf8JsonWriter writer, Object value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteCore[TValue](JsonConverter jsonConverter, Utf8JsonWriter writer, TValue& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.JsonSerializer.WriteAsyncCore[TValue](Stream utf8Json, TValue value, Type inputType, JsonSerializerOptions options, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeResultAsync>g__Logged|21_0(ResourceInvoker invoker, IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:13:44.170 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 500 - application/json;+charset=utf-8 53.6943ms
+2022-01-08 18:15:45.293 -05:00 [INF] Starting Web Host
+2022-01-08 18:15:46.218 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 18:15:46.222 -05:00 [INF] Hosting environment: Development
+2022-01-08 18:15:46.222 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 18:15:46.233 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 18:15:46.317 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 85.7483ms
+2022-01-08 18:15:46.450 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 18:15:46.531 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.7762ms
+2022-01-08 18:15:51.742 -05:00 [INF] Starting Web Host
+2022-01-08 18:15:52.761 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 18:15:52.765 -05:00 [INF] Hosting environment: Development
+2022-01-08 18:15:52.765 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 18:15:52.776 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 18:15:52.859 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 84.4876ms
+2022-01-08 18:15:52.952 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 18:15:53.020 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 68.1929ms
+2022-01-08 18:15:58.721 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:15:58.749 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:15:58.753 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:15:58.794 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:15:59.149 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:15:59.877 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:16:00.618 -05:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:16:00.684 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:16:00.685 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:16:00.855 -05:00 [INF] Executed DbCommand (18ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:16:00.978 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1822.5925ms.
+2022-01-08 18:16:00.984 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:16:01.000 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 2200.4061ms
+2022-01-08 18:16:01.001 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:16:01.007 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 2285.5434ms
+2022-01-08 18:16:18.012 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:16:18.013 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:16:18.015 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 2.1810ms
+2022-01-08 18:16:18.019 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 267
+2022-01-08 18:16:18.020 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:16:18.020 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:16:18.024 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:16:18.056 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:16:18.079 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:16:18.101 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:16:18.210 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 150), @p1='?' (Size = 150)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Owner] ([Address], [Name])
+VALUES (@p0, @p1);
+SELECT [OwnerId]
+FROM [Owner]
+WHERE @@ROWCOUNT = 1 AND [OwnerId] = scope_identity();
+2022-01-08 18:16:18.228 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p2='?' (Size = 150), @p3='?' (Size = 50), @p4='?' (Size = 150), @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Property] ([Address], [CodeInternal], [Name], [OwnerId], [Price], [Year])
+VALUES (@p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [PropertyId]
+FROM [Property]
+WHERE @@ROWCOUNT = 1 AND [PropertyId] = scope_identity();
+2022-01-08 18:16:18.233 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@p8='?' (DbType = Boolean), @p9='?' (Size = 4000), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [PropertyImage] ([Enabled], [File], [PropertyId])
+VALUES (@p8, @p9, @p10);
+SELECT [PropertyImageId]
+FROM [PropertyImage]
+WHERE @@ROWCOUNT = 1 AND [PropertyImageId] = scope_identity();
+2022-01-08 18:16:18.255 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Post (Properties.API), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 198.7746ms.
+2022-01-08 18:16:18.255 -05:00 [INF] Executing CreatedAtActionResult, writing value of type 'Properties.Model.DataTransferObjects.PropertyInfoDto'.
+2022-01-08 18:16:18.310 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 285.7508ms
+2022-01-08 18:16:18.310 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:16:18.311 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 267 - 201 - application/json;+charset=utf-8 291.6068ms
+2022-01-08 18:16:18.319 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:16:18.319 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:16:18.319 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:16:18.319 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:16:18.334 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:16:18.339 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:16:18.345 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:16:18.349 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:16:18.350 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15.2687ms.
+2022-01-08 18:16:18.350 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:16:18.350 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 30.5069ms
+2022-01-08 18:16:18.350 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:16:18.350 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 31.1283ms
+2022-01-08 18:16:32.645 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:16:32.645 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:16:32.645 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 0.5009ms
+2022-01-08 18:16:32.647 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 265
+2022-01-08 18:16:32.647 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:16:32.647 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:16:32.647 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:16:32.663 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:16:32.663 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:16:32.666 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:16:32.755 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 107.7786ms
+2022-01-08 18:16:32.756 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:16:32.756 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Properties.Model.Models.BusinessException: Property Internal Code duplicated
+   at Properties.Model.Services.PropertyBusinessService.InsertAsync(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.Business\Services\PropertyBusinessService.cs:line 62
+   at Properties.API.Controllers.PropertiesController.Post(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.API\Controllers\PropertiesController.cs:line 56
+   at lambda_method129(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:16:32.801 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 265 - 500 - application/json;+charset=utf-8 153.9567ms
+2022-01-08 18:17:05.351 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties - -
+2022-01-08 18:17:05.351 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:17:05.352 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties - - - 204 - - 0.4215ms
+2022-01-08 18:17:05.362 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44398/api/properties application/json 265
+2022-01-08 18:17:05.363 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:17:05.363 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:17:05.363 -05:00 [INF] Route matched with {action = "Post", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Post(Properties.Model.DataTransferObjects.PropertyCreateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:17:05.377 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Post (Properties.API) - Validation state: "Valid"
+2022-01-08 18:17:05.384 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:17:05.392 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__code_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[CodeInternal] = @__code_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:17:05.461 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Post (Properties.API) in 98.2843ms
+2022-01-08 18:17:05.461 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Post (Properties.API)'
+2022-01-08 18:17:05.462 -05:00 [ERR] An unhandled exception has occurred while executing the request.
+Properties.Model.Models.BusinessException: Property Internal Code duplicated
+   at Properties.Model.Services.PropertyBusinessService.InsertAsync(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.Business\Services\PropertyBusinessService.cs:line 62
+   at Properties.API.Controllers.PropertiesController.Post(PropertyCreateDto dto) in C:\Users\User\source\repos\Properties.API\Properties.API\Controllers\PropertiesController.cs:line 56
+   at lambda_method129(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-01-08 18:17:05.463 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44398/api/properties application/json 265 - 500 - application/json;+charset=utf-8 100.2489ms
+2022-01-08 18:18:01.471 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:18:01.472 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:18:01.472 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:18:01.479 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:18:01.490 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:18:01.491 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:18:01.495 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:18:01.499 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:18:01.505 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 15.3075ms.
+2022-01-08 18:18:01.506 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:18:01.506 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 26.6098ms
+2022-01-08 18:18:01.506 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:18:01.533 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 61.2797ms
+2022-01-08 18:18:45.313 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:18:45.313 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:18:45.313 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:18:45.313 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:18:45.326 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:18:45.327 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:18:45.336 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:18:45.378 -05:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:18:45.379 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 52.5072ms.
+2022-01-08 18:18:45.379 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:18:45.379 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 65.992ms
+2022-01-08 18:18:45.379 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:18:45.379 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 66.5564ms
+2022-01-08 18:18:52.334 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties/6 - -
+2022-01-08 18:18:52.334 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:18:52.334 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties/6 - - - 204 - - 0.3856ms
+2022-01-08 18:18:52.335 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/6 - -
+2022-01-08 18:18:52.335 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:18:52.335 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:18:52.339 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:18:52.357 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:18:52.359 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:18:52.371 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:18:52.396 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [PropertyImage]
+WHERE [PropertyImageId] = @p0;
+SELECT @@ROWCOUNT;
+2022-01-08 18:18:52.411 -05:00 [INF] Executed DbCommand (13ms) [Parameters=[@p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Property]
+WHERE [PropertyId] = @p1;
+SELECT @@ROWCOUNT;
+2022-01-08 18:18:52.414 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 57.2334ms.
+2022-01-08 18:18:52.416 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:18:52.417 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 77.0681ms
+2022-01-08 18:18:52.417 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:18:52.417 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/6 - - - 204 - - 81.6404ms
+2022-01-08 18:18:55.936 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:18:55.936 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:18:55.937 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:18:55.937 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:18:55.953 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:18:55.954 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:18:55.957 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:18:55.961 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:18:55.961 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 8.1057ms.
+2022-01-08 18:18:55.961 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:18:55.962 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 24.3552ms
+2022-01-08 18:18:55.962 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:18:55.962 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 26.1624ms
+2022-01-08 18:19:22.424 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties/4 - -
+2022-01-08 18:19:22.424 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:19:22.424 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.GetById (Properties.API)'
+2022-01-08 18:19:22.428 -05:00 [INF] Route matched with {action = "GetById", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.DataTransferObjects.PropertyInfoDto] GetById(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:19:22.439 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.GetById (Properties.API) - Validation state: "Valid"
+2022-01-08 18:19:22.442 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:19:22.446 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:19:22.446 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.GetById (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.7887ms.
+2022-01-08 18:19:22.446 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.DataTransferObjects.PropertyInfoDto'.
+2022-01-08 18:19:22.447 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.GetById (Properties.API) in 18.4265ms
+2022-01-08 18:19:22.447 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.GetById (Properties.API)'
+2022-01-08 18:19:22.447 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties/4 - - - 200 - application/json;+charset=utf-8 23.6486ms
+2022-01-08 18:19:41.595 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties/4 - -
+2022-01-08 18:19:41.595 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:19:41.596 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties/4 - - - 204 - - 0.4612ms
+2022-01-08 18:19:41.597 -05:00 [INF] Request starting HTTP/2 PUT https://localhost:44398/api/properties/4 application/json 267
+2022-01-08 18:19:41.597 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:19:41.597 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Put (Properties.API)'
+2022-01-08 18:19:41.601 -05:00 [INF] Route matched with {action = "Put", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Put(Int32, Properties.Model.DataTransferObjects.PropertyUpdateDto) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:19:41.630 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Put (Properties.API) - Validation state: "Valid"
+2022-01-08 18:19:41.632 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:19:41.636 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:19:41.653 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__code_0='?' (Size = 50), @__propertyId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE ([p].[CodeInternal] = @__code_0) AND ([p].[PropertyId] <> @__propertyId_1)
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:19:41.667 -05:00 [INF] Executed DbCommand (4ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 150), @p1='?' (Size = 50), @p2='?' (Size = 150), @p3='?' (DbType = Int32), @p4='?' (DbType = Double), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Property] SET [Address] = @p0, [CodeInternal] = @p1, [Name] = @p2, [OwnerId] = @p3, [Price] = @p4, [Year] = @p5
+WHERE [PropertyId] = @p6;
+SELECT @@ROWCOUNT;
+2022-01-08 18:19:41.668 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Put (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 37.5373ms.
+2022-01-08 18:19:41.668 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:19:41.668 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Put (Properties.API) in 66.2931ms
+2022-01-08 18:19:41.668 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Put (Properties.API)'
+2022-01-08 18:19:41.668 -05:00 [INF] Request finished HTTP/2 PUT https://localhost:44398/api/properties/4 application/json 267 - 204 - - 70.8173ms
+2022-01-08 18:19:41.677 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:19:41.677 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:19:41.677 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:19:41.677 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:19:41.692 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:19:41.693 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:19:41.696 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:19:41.700 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:19:41.700 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 7.6702ms.
+2022-01-08 18:19:41.700 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:19:41.700 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 23.4469ms
+2022-01-08 18:19:41.701 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:19:41.701 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 24.0785ms
+2022-01-08 18:22:04.753 -05:00 [INF] Starting Web Host
+2022-01-08 18:22:05.836 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 18:22:05.840 -05:00 [INF] Hosting environment: Development
+2022-01-08 18:22:05.840 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 18:22:05.852 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 18:22:05.942 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 90.5813ms
+2022-01-08 18:22:06.033 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 18:22:06.109 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 75.7177ms
+2022-01-08 18:22:11.889 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:22:11.924 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:22:11.927 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:22:11.970 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:22:12.420 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:22:13.157 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:22:13.707 -05:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:22:13.754 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:22:13.754 -05:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-01-08 18:22:13.970 -05:00 [INF] Executed DbCommand (34ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:22:14.055 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1628.8512ms.
+2022-01-08 18:22:14.061 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:22:14.073 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 2099.8794ms
+2022-01-08 18:22:14.074 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:22:14.080 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 2190.9557ms
+2022-01-08 18:22:25.850 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44398/api/properties/5 - -
+2022-01-08 18:22:25.850 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:22:25.851 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44398/api/properties/5 - - - 204 - - 2.0097ms
+2022-01-08 18:22:25.853 -05:00 [INF] Request starting HTTP/2 DELETE https://localhost:44398/api/properties/5 - -
+2022-01-08 18:22:25.854 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:22:25.854 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:22:25.859 -05:00 [INF] Route matched with {action = "Delete", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Delete(Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:22:25.879 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Delete (Properties.API) - Validation state: "Valid"
+2022-01-08 18:22:25.903 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:22:25.929 -05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__propertyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [t].[OwnerId0], [t].[Address0], [t].[Name0], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT TOP(1) [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year], [o].[OwnerId] AS [OwnerId0], [o].[Address] AS [Address0], [o].[Name] AS [Name0]
+    FROM [Property] AS [p]
+    INNER JOIN [Owner] AS [o] ON [p].[OwnerId] = [o].[OwnerId]
+    WHERE [p].[PropertyId] = @__propertyId_0
+) AS [t]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [t].[OwnerId0], [p0].[PropertyImageId]
+2022-01-08 18:22:26.066 -05:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [PropertyImage]
+WHERE [PropertyImageId] = @p0;
+SELECT @@ROWCOUNT;
+2022-01-08 18:22:26.077 -05:00 [INF] Executed DbCommand (5ms) [Parameters=[@p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Property]
+WHERE [PropertyId] = @p1;
+SELECT @@ROWCOUNT;
+2022-01-08 18:22:26.098 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Delete (Properties.API), returned result Microsoft.AspNetCore.Mvc.NoContentResult in 218.0209ms.
+2022-01-08 18:22:26.100 -05:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 204
+2022-01-08 18:22:26.100 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Delete (Properties.API) in 240.496ms
+2022-01-08 18:22:26.100 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Delete (Properties.API)'
+2022-01-08 18:22:26.100 -05:00 [INF] Request finished HTTP/2 DELETE https://localhost:44398/api/properties/5 - - - 204 - - 246.9806ms
+2022-01-08 18:22:44.471 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/api/properties - -
+2022-01-08 18:22:44.472 -05:00 [INF] CORS policy execution successful.
+2022-01-08 18:22:44.472 -05:00 [INF] Executing endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:22:44.472 -05:00 [INF] Route matched with {action = "Get", controller = "Properties"}. Executing controller action with signature System.Threading.Tasks.Task`1[Properties.Model.Models.IPageResultModel`1[Properties.Model.DataTransferObjects.PropertyInfoDto]] Get(Properties.Model.DataTransferObjects.PropertyFilterDto, System.String[], Int32, Int32) on controller Properties.API.Controllers.PropertiesController (Properties.API).
+2022-01-08 18:22:44.484 -05:00 [INF] Executing action method Properties.API.Controllers.PropertiesController.Get (Properties.API) - Validation state: "Valid"
+2022-01-08 18:22:44.489 -05:00 [INF] Entity Framework Core 5.0.13 initialized 'PropertiesContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-08 18:22:44.494 -05:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Property] AS [p]
+2022-01-08 18:22:44.497 -05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[PropertyId], [t].[Address], [t].[CodeInternal], [t].[Name], [t].[OwnerId], [t].[Price], [t].[Year], [o].[OwnerId], [o].[Address], [o].[Name], [p0].[PropertyImageId], [p0].[Enabled], [p0].[File], [p0].[PropertyId]
+FROM (
+    SELECT [p].[PropertyId], [p].[Address], [p].[CodeInternal], [p].[Name], [p].[OwnerId], [p].[Price], [p].[Year]
+    FROM [Property] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Owner] AS [o] ON [t].[OwnerId] = [o].[OwnerId]
+LEFT JOIN [PropertyImage] AS [p0] ON [t].[PropertyId] = [p0].[PropertyId]
+ORDER BY [t].[PropertyId], [o].[OwnerId], [p0].[PropertyImageId]
+2022-01-08 18:22:44.497 -05:00 [INF] Executed action method Properties.API.Controllers.PropertiesController.Get (Properties.API), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 12.7194ms.
+2022-01-08 18:22:44.497 -05:00 [INF] Executing ObjectResult, writing value of type 'Properties.Model.Models.PageResultModel`1[[Properties.Model.DataTransferObjects.PropertyInfoDto, Properties.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-01-08 18:22:44.498 -05:00 [INF] Executed action Properties.API.Controllers.PropertiesController.Get (Properties.API) in 25.9523ms
+2022-01-08 18:22:44.498 -05:00 [INF] Executed endpoint 'Properties.API.Controllers.PropertiesController.Get (Properties.API)'
+2022-01-08 18:22:44.498 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/api/properties - - - 200 - application/json;+charset=utf-8 26.5703ms

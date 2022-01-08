@@ -54,14 +54,20 @@ namespace Properties.API.Controllers
         public async Task<ActionResult<PropertyInfoDto>> Post([FromBody] PropertyCreateDto dto)
         {
             var entity = await propertyBusinessService.InsertAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id = entity.PropertyId }, entity);
+            return CreatedAtAction(nameof(GetById), new { id = entity.PropertyId }, _mapper.Map<PropertyInfoDto>(entity));
         }
-
 
         [HttpPut("{propertyId}")]
         public async Task<ActionResult<PropertyInfoDto>> Put(int propertyId, [FromBody] PropertyUpdateDto dto)
         {
             await propertyBusinessService.UpdateAsync(propertyId, dto);
+            return NoContent();
+        }
+
+        [HttpDelete("{propertyId}")]
+        public async Task<ActionResult<PropertyInfoDto>> Delete(int propertyId)
+        {
+            await propertyBusinessService.DeleteAsync(propertyId);
             return NoContent();
         }
     }

@@ -31,5 +31,6 @@ namespace Properties.Model.Services
         /// Update Property with attributes received
         /// </summary>
         Task UpdateAsync(int propertyId, PropertyUpdateDto dto);
+        Task DeleteAsync(int propertyId);
     }
 }

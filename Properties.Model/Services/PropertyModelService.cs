@@ -51,13 +51,13 @@ namespace Properties.Model.Services
         /// <returns>Property Entity</returns>
         public async Task<bool> IsPropertyDuplicated(string code, int? propertyId)
         {
-            var query =  dbContext.Property.AsQueryable()
+            var query = dbContext.Property.AsQueryable()
               .Include(p => p.Owner)
               .Include(p => p.PropertyImages)
               .Where(p => p.CodeInternal == code);
 
             if (propertyId.HasValue)
-                query = query.Where(p=>p.PropertyId != propertyId);
+                query = query.Where(p => p.PropertyId != propertyId);
 
             var entity = await query.FirstOrDefaultAsync();
 
@@ -114,6 +114,12 @@ namespace Properties.Model.Services
         public async Task UpdateAsync(Property entity)
         {
             unitOfWork.Properties.Update(entity);
+            await unitOfWork.CommitAsync();
+        }
+
+        public async Task DeleteAsync(int propertyId)
+        {
+            unitOfWork.Properties.DeleteAsync(propertyId);
             await unitOfWork.CommitAsync();
         }
     }

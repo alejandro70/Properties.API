@@ -29,5 +29,6 @@ namespace Properties.Model.Services
         /// </summary>
         Task UpdateAsync(Property entity);
         Task<bool> IsPropertyDuplicated(string code, int? propertyId);
+        Task DeleteAsync(int propertyId);
     }
 }
