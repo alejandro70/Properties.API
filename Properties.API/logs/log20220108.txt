@@ -1,0 +1,8 @@
+2022-01-08 17:45:22.688 -05:00 [INF] Starting Web Host
+2022-01-08 17:45:23.844 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-08 17:45:23.849 -05:00 [INF] Hosting environment: Development
+2022-01-08 17:45:23.850 -05:00 [INF] Content root path: C:\Users\User\source\repos\Properties.API\Properties.API
+2022-01-08 17:45:23.861 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-08 17:45:24.018 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 158.4437ms
+2022-01-08 17:45:24.110 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-08 17:45:24.192 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 81.4356ms
