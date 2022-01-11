@@ -1,0 +1,9 @@
+2022-01-10 19:09:48.499 -05:00 [INF] Starting Web Host
+2022-01-10 19:09:50.250 -05:00 [INF] User profile is available. Using 'C:\Users\User\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-10 19:09:50.459 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-01-10 19:09:50.459 -05:00 [INF] Hosting environment: Development
+2022-01-10 19:09:50.459 -05:00 [INF] Content root path: C:\Users\User\Source\Repos\alejandro70\Properties.API\Properties.API
+2022-01-10 19:09:50.494 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/index.html - -
+2022-01-10 19:09:50.584 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/index.html - - - 200 - text/html;charset=utf-8 91.8043ms
+2022-01-10 19:09:50.695 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - -
+2022-01-10 19:09:50.771 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44398/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 76.4130ms
